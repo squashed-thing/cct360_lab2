@@ -1,30 +1,46 @@
 <!DOCTYPE html>
+<html>
 <head>
 	<title>CCT360 Lab 2</title>
 </head>
 
 <body>
-
-	// alert
-	<button onclick="clickFunction()">Maybe click me?</button>
+	<button onclick="alertFunction()">Maybe click me?</button>
 	<script>
-		function clickFunction() {
+		function alertFunction() {
 			alert("I have been clicked!");
 		}
 	</script>
 
-	// image switching
+	<!-- image switching -->
 	<p>Click the button to change the image seen below.</p>
-	<img src="images/guitar.png" id="toChange" width="480"></img>
+	<img src="images/guitar.png" id="toChange" width="480">
 	<br>
 	<br>
 
-	<button onclick="clickFunction()">Change Image</button>
+	<button onclick="changeImage()">Change Image</button>
 	<script>
-	function clickFunction() {
-		document.getElementById("toChange").src = "images/girl_guitar.jpg";
-	}
+		function changeImage() {
+			document.getElementById("toChange").src = "images/girl_guitar.jpg";
+		}
 	</script>
-	
+
+	<!-- yes/no interaction -->
+	<hr>
+	<p>Warning: this button may or may not contain free pizza.</p>
+	<button onclick="pizzaFunction()">Claim your free pizza</button>
+	<p id="pizzaMessage"></p>
+	<script>
+		function pizzaFunction() {
+			var wantsPizza = confirm("Do you want a free pizza? Click OK for yes!");
+
+			if (wantsPizza) {
+				document.getElementById("pizzaMessage").innerHTML = "🍕 Yes! Your imaginary pizza is on its way. Extra cheese, obviously.";
+			} else {
+				document.getElementById("pizzaMessage").innerHTML = "😢 No pizza for you... Your loss. More pizza for me.";
+			}
+		}
+	</script>
 
 </body>
+</html>
